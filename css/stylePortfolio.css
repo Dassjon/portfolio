@@ -24,6 +24,7 @@ body {
 
 * a {
   text-decoration: none;
+  display: flex;
 }
 
 header {
@@ -186,14 +187,14 @@ p {
   margin-top: 300px;
 }
 
-.div-flex-row {
+.dice-game-main-div {
   display: flex;
-  flex: row;
+  flex-direction: row;
   width: 50%;
   height: auto;
 }
 
-.div-image {
+.dice-game-div-image-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,7 +207,7 @@ p {
   width: 100%;
 }
 
-.projects-section-info {
+.dice-game-project-info {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -216,21 +217,12 @@ p {
   background-color: #282f3c;
   padding: 0 15px;
   width: 100%;
+  height: 285px;
 }
 
 .project-name {
-  margin-bottom: 0;
+  margin: 13px 0 0 0;
 }
-
-/* .p-mamalon {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
-}
-
-.hide {
-  max-height: 200px;
-} */
 
 .div-tech-images {
   display: flex;
@@ -265,6 +257,28 @@ p {
 .view-projects-button:active {
   background-color: rgb(116, 114, 114);
   transition: background 250ms;
+}
+
+.anchor-button {
+  display: flex;
+}
+
+.projects-paragraphs {
+  font-size: 14px;
+}
+
+.guess-my-number-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.guess-my-number-main-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
 }
 
 /* Skills section */
