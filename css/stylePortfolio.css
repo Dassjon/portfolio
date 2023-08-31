@@ -1,139 +1,310 @@
-html{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    font-family: 'Trebuchet MS';
-    background-image: -webkit-gradient(linear,
-									   left bottom,
-									   left top,
-									   color-stop(0.44, rgb(28,58,148)),
-									   color-stop(0.72, rgb(53, 108, 175)),
-									   color-stop(0.86, rgb(28,58,148)));
-    color: white;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+body {
+  font-family: "Trebuchet MS";
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.2, rgb(28, 58, 148)),
+    color-stop(0.5, rgb(53, 108, 175)),
+    color-stop(0.86, rgb(28, 58, 148))
+  );
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
-header{
-    background-color: rgb(0, 0, 0, 0.25);
-    font-size: 24px;
-    display:flex;
-    justify-content: space-between;
-    padding: 0 5px 0 5px;
-    align-items: center;
-    padding: 20px 0;
+* a {
+  text-decoration: none;
 }
 
-header h3{
-    margin: 0;
-    padding: 0 20px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 0, 0.2);
+  font-size: 24px;
+  padding: 0 5px 0 5px;
+  padding: 20px 0;
+  /* Animación para que el header se quede estático */
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0px;
+  animation: adjust-header linear both;
+  animation-timeline: scroll();
+  animation-range: 0 200px;
 }
 
-header nav ul{
-    margin: 0;
-    padding: 0;
-    display: flex;
+@keyframes adjust-header {
+  to {
+    /* Animación para que el header cambie de tamaño y color */
+    background: rgba(0, 0, 0, 0.2);
+    /* font-size: 12px; */
+    height: 20px;
+  }
 }
 
-header nav ul li{
-    display: block;
-    padding: 0 15px;
+header h3 {
+  margin: 0;
+  padding: 0 20px;
 }
 
-header nav ul li a{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
+header nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
-main section {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 200px;
+header nav ul li {
+  display: block;
+  padding: 0 15px;
 }
 
-main h1.greeting{
-    font-size: 48px;
+header nav ul li a {
+  display: flex;
+  align-items: center;
+  color: white;
 }
 
-main h3.developer-text{
-    font-size: 36px;
+.top-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 200px;
 }
 
-.mail-img{
-    width: 30px;
+main h1.greeting {
+  font-size: 30px;
+  font-weight: bolder;
+  opacity: 0.9;
 }
 
-.linkedin-img{
-    width: 25px;
+main h3.developer-text {
+  font-size: 60px;
+  font-weight: bolder;
 }
 
-main section div.align-about{
-    display: flex;
-    flex-direction: column;
-    width: 35%;
+.header-gitHub-img {
+  width: 27px;
 }
 
-main section div h1, h3, p{
-    display: flex;
-    margin: 5px;
+.header-mail-img {
+  width: 30px;
 }
 
-.buttons{
-    display: flex;
-    text-align: center;
+.header-linkedin-img {
+  width: 25px;
 }
 
-.buttons button,
-.buttons a{
-    background-color: #3197FE;
-    padding: 1em 1.5em;
-    border: none;
-    font-weight: 600;
-    border-radius: 0.25em;
-    color: white;
-    /* Animaciones en CSS */
-    /* transition es una propiedad como Array. Transform es un Array. */
-    /* Esta línea de código hace que, cuando se detiene el "hover", vuelve a su tamaño, color
+.align-about {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+main section div h1,
+h3,
+p {
+  display: flex;
+  margin: 5px;
+}
+
+.professional-text {
+  opacity: 0.9;
+}
+
+.buttons {
+  display: flex;
+  text-align: center;
+}
+
+.contact-button,
+.projects-button {
+  background-color: #ff7f06;
+  padding: 1em 1.5em;
+  border: none;
+  font-weight: 600;
+  border-radius: 32px;
+  color: white;
+  /* Animaciones en CSS */
+  /* transition es una propiedad como Array. Transform es un Array. */
+  /* Esta línea de código hace que, cuando se detiene el "hover", vuelve a su tamaño, color
     y forma original en 250ms */
-    transition: background 250ms, transform 250ms;
-    cursor: pointer;
-    margin: 15px 100px 0 0;
-    text-decoration: none;
+  transition: background 250ms, transform 250ms;
+  cursor: pointer;
+  margin: 15px 100px 0 0;
 }
 
-.buttons button:hover, .buttons a:hover{
-    /* Esta línea de código hace una transición entre, el color por defecto del botón, y el 
+.projects-button:hover,
+.contact-button:hover {
+  /* Esta línea de código hace una transición entre, el color por defecto del botón, y el 
     color elegido del botón */
-    transition: background 250ms, transform 250ms; /* Transform hace que tarde 250ms de ir
+  transition: background 250ms, transform 250ms; /* Transform hace que tarde 250ms de ir
     desde el tamaño original del botón, a un botón 1.5 veces más grande */
-    background-color: #0084ff;
-    /* Esta línea de código hace que, cuando se pase el cursor por encima, el botón crezca un poco*/
-    transform: scale(1.05);
+  background-color: #0084ff;
+  /* Esta línea de código hace que, cuando se pase el cursor por encima, el botón crezca un poco*/
+  transform: scale(1.05);
 }
 
-.buttons button:active, .buttons:active{
-    background-color: #02488B;
-    /* Esta línea de código hace que haga una transición entre el color del hover, y el color del background */
-    transition: background 250ms;
-    
+.projects-button:active,
+.contact-button:active {
+  /* border: 1px solid #a7570c; */
+  background-color: #02488b;
+  /* Esta línea de código hace que haga una transición entre el color del hover, y el color del background */
+  transition: background 250ms;
 }
 
-.developer-text{
-    font-size: 48px;
-    background-image: linear-gradient(to bottom,rgb(64, 49, 177),rgb(36, 24, 126));
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+.developer-text {
+  font-size: 48px;
+  background-image: linear-gradient(to bottom, #ff7f06, #6b7dff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  /* rgb(64, 49, 177),rgb(36, 24, 126)); */
 }
 
-main section img.waifu-image{
-    width: 35%;
+.waifu-image {
+  width: 35%;
+}
+
+/* Aquí empiezan las secciones de mis proyectos */
+
+.projects-title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  margin-top: 300px;
+}
+
+.div-flex-row {
+  display: flex;
+  flex: row;
+  width: 50%;
+  height: auto;
+}
+
+.div-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+}
+
+.dice-img {
+  width: 100%;
+}
+
+.projects-section-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  background-color: #282f3c;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.project-name {
+  margin-bottom: 0;
+}
+
+/* .p-mamalon {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.hide {
+  max-height: 200px;
+} */
+
+.div-tech-images {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.svg-images {
+  width: 40px;
+  height: 40px;
+}
+
+.view-projects-button {
+  background-color: #222222;
+  color: white;
+  border: none;
+  height: auto;
+  width: 200px;
+  font-weight: bolder;
+  padding: 5px 0;
+  transition: background 250ms, transform 250ms;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.view-projects-button:hover {
+  transition: background 250ms, transform 250ms;
+  background-color: rgb(42, 42, 42);
+  transform: scale(1.05);
+}
+
+.view-projects-button:active {
+  background-color: rgb(116, 114, 114);
+  transition: background 250ms;
+}
+
+/* Skills section */
+
+.skills-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* About me section */
+
+.about-me-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  margin-top: 200px;
+}
+
+.upper-footer,
+.bottom-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-gitHub-img,
+.footer-linkedin-img,
+.footer-mail-img {
+  width: 45px;
+  padding-right: 20px;
+}
+
+footer section hr {
+  width: 50%;
+}
+
+footer section div p {
+  margin-bottom: 15px;
 }
